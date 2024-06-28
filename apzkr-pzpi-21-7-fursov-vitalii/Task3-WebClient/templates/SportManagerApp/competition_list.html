@@ -1,0 +1,30 @@
+{% extends 'SportManagerApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'SportManagerApp/styles/competition_list.css' %}">
+
+<div class="container">
+    <h2>Competition List</h2>
+    <ul class="competition-list">
+        {% for competition in competitions %}
+            <li class="competition-item">
+                <a href="{% url 'competition_detail' competition.competition_id %}">{{ competition.name }}</a>
+                {% if user.is_authenticated and user.role == 'admin' %}
+                    <div class="admin-actions">
+                        <a href="{% url 'competition_update' competition.competition_id %}" class="update-button">Update</a>
+                        <a href="{% url 'competition_delete' competition.competition_id %}" class="delete-button">Delete</a>
+                    </div>
+                {% endif %}
+                <a>Prize pool: {{ competition.prize_pool }}</a>
+                <a>League: {{ competition.league }}</a>
+                <a>{{ competition.sport_type }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated and user.role == 'admin' %}
+        <a href="{% url 'competition_create' %}" class="create-button">Create Competition</a>
+    {% endif %}
+</div>
+{% endblock %}

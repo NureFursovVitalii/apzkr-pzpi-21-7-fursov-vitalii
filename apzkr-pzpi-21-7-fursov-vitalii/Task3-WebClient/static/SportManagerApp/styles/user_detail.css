@@ -1,0 +1,85 @@
+.user-details {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    background-color: #51f56f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #32c44a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.user-details h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.user-details p {
+    margin-bottom: 10px;
+}
+
+.user-details strong {
+    font-weight: bold;
+}
+
+.training-history {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.training-history h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.training-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.training-history li {
+    margin-bottom: 15px;
+}
+
+.training-history li + li {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+.training-history strong {
+    font-weight: bold;
+}
+
+.training-recommendations {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.training-recommendations h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}

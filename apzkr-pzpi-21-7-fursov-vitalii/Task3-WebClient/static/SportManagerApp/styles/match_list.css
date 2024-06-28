@@ -1,0 +1,61 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+}
+
+h2 {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.match-list {
+    list-style: none;
+    padding: 0;
+}
+
+.match-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.match-details, .match-info, .match-location {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.match-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.update-button, .delete-button, .create-button {
+    background-color: #51f56f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover, .delete-button:hover, .create-button:hover {
+    background-color: #32c44a;
+}
