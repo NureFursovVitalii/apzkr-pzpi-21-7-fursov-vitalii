@@ -1,0 +1,27 @@
+{% extends 'SportManagerApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'SportManagerApp/styles/sensor_list.css' %}">
+
+<div class="container">
+    <h2>Sensors</h2>
+    <div class="actions">
+        <a href="{% url 'sensor_create' %}" class="button">Add Sensor</a>
+    </div>
+    <ul class="sensor-list">
+        {% for sensor in sensors %}
+            <li>
+                Sensor ID: {{ sensor.sensor_id }} ({{ sensor.heart_rate }} bpm)
+                <form action="{% url 'sensor_delete' sensor.sensor_id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </li>
+        {% empty %}
+            <p>No sensors available.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

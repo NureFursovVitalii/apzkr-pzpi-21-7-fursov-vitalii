@@ -1,0 +1,16 @@
+{% extends 'SportManagerApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'SportManagerApp/styles/match_form.css' %}">
+
+<div class="container">
+    <h2>{% if form.instance.pk %}Update Match{% else %}Create Match{% endif %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+    </form>
+</div>
+{% endblock %}

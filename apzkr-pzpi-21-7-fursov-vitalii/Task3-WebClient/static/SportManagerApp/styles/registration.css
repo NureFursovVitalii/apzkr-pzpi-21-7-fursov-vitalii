@@ -1,0 +1,106 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    margin: 0;
+}
+
+.credentials-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    text-align: center;
+    margin-top: 20px 0;
+}
+
+h2 {
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.form-field {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.form-field label {
+    font-size: 18px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="number"],
+.form-field input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    width: 30%;
+}
+
+.radio-buttons label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #51f56f;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #32c44a;
+}
+
+.login-link {
+    display: block;
+    color: black;
+    border: 2px solid black;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-link:hover {
+    color: #51f56f;
+    border: 2px solid #51f56f;
+}
+
+.error-list {
+    margin-top: 20px;
+    color: red;
+    list-style-type: none;
+    padding: 0;
+}
+
+.error-list li {
+    margin-bottom: 5px;
+}

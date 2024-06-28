@@ -1,0 +1,17 @@
+{% extends 'SportManagerApp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Training Calendar</h2>
+    <ul class="training-list">
+        {% for training in trainings %}
+            <li class="training-item">
+                <a href="{% url 'training_detail' training.pk %}">
+                    {{ training.datetime }} - {{ training.location }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'training_create' %}" class="button">Create Training</a>
+</div>
+{% endblock %}

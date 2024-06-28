@@ -1,0 +1,14 @@
+{% extends 'SportManagerApp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Training Recommendations for {{ user.name }}</h2>
+    <p>{{ recommendation }}</p>
+    <h3>Recent Trainings</h3>
+    <ul>
+        {% for training in trainings %}
+            <li>{{ training.training.datetime }} - Intensity: {{ training.intensity }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

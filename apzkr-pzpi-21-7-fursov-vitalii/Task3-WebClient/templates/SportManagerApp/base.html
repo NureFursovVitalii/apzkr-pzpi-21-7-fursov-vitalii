@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sport Manager{% endblock %}</title>
+    {% load static %}
+    {% block extra_head %}
+        <link rel="stylesheet" type="text/css" href="{% static 'SportManagerApp/styles/base.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    {% if user.role == 'sportsman' %}
+                        <li><a href="{% url 'competition_list' %}">Competitions</a></li>
+                        <li><a href="{% url 'training_list' %}">Trainings</a></li>
+                        <li><a href="{% url 'user_detail' user.user_id %}">My profile</a></li>
+                    {% elif user.role == 'coach' %}
+                        <li><a href="{% url 'competition_list' %}">Competitions</a></li>
+                        <li><a href="{% url 'training_list' %}">Trainings</a></li>
+                        <li><a href="{% url 'user_detail' user.user_id %}">My profile</a></li>
+                        <li><a href="{% url 'team_detail' user.team_id %}">My team</a></li>
+                    {% elif user.role == 'admin' %}
+                        <li><a href="{% url 'competition_list' %}">Competitions</a></li>
+                        <li><a href="{% url 'match_list' %}">Matches</a></li>
+                        <li><a href="{% url 'training_list' %}">Trainings</a></li>
+                        <li><a href="{% url 'user_list' %}">Users</a></li>
+                        <li><a href="{% url 'team_list' %}">Teams</a></li>
+                        <li><a href="{% url 'sensor_list' %}">Sensors</a></li>
+                        <li><a href="{% url 'backup' %}">Backup</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'logout' %}">Log out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
